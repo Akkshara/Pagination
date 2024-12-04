@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Global Body Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fa;  /* Light gray background */
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  height: 100vh;
+}
+
+/* Main Table Container */
+.table-container {
+  width: 80%; /* Increased width for better visibility */
+  max-width: 1200px; /* Increased max-width for larger table */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+}
+
+th {
+  background-color: #009688;  /* Teal background */
   color: white;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+tr:hover {
+  background-color: #f1f1f1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Pagination Styling */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.page-button {
+  padding: 8px 16px;
+  background-color: #009688;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.page-button.active {
+  background-color: #00796b;
+}
+
+.page-button:hover {
+  background-color: #00796b;
+  transform: translateY(-2px);
+}
+
+.page-button:disabled {
+  background-color: #b2dfdb;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Ellipsis Button Styling */
+.ellipsis {
+  font-size: 16px;
+  font-weight: bold;
+  color: #009688;
+  margin: 0 10px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .table-container {
+    width: 95%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .page-button {
+    padding: 6px 12px;
   }
 }
